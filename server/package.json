@@ -1,0 +1,32 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "returns json sheet from xls  & writes json to xls sheet",
+  "main": "index.js",
+  "dependencies": {
+    "xlsx": "^0.16.6",
+    "xlsx-to-json": "^0.3.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/pmontu/RiduExcelEditor.git"
+  },
+  "keywords": [
+    "sheetjs",
+    "xlsx",
+    "react-data-grid",
+    "node"
+  ],
+  "author": "Ridu",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/pmontu/RiduExcelEditor/issues"
+  },
+  "homepage": "https://github.com/pmontu/RiduExcelEditor#readme"
+}

@@ -9,23 +9,21 @@ const port = 8080;
 app.use(cors());
 app.use(bodyParser.json());
 
-const excelFile = "./src/data.xlsx";
-// const excelFile = "./src/file2.xls";
-const sheetName = "Sheet1";
-// const sheetName = "RTS - Problem Log";
+const excelFile = "./data/data.xlsx";
+// const sheetName = "Sheet1";
 
 app.get("/", (req, res) => {
   let workbook = XLSX.readFile(excelFile);
-  let sheet = workbook.Sheets[sheetName];
+  sheet1Name = workbook.SheetNames[0]
+  let sheet = workbook.Sheets[sheet1Name];
   let jsonObj = XLSX.utils.sheet_to_json(sheet);
   res.send(jsonObj);
 });
 
 app.post("/", (req, res) => {
   const workbook = XLSX.readFile(excelFile);
-
-  // Overwrite worksheet
-  workbook.Sheets[sheetName] = XLSX.utils.json_to_sheet(req.body);
+  sheet1Name = workbook.SheetNames[0]
+  workbook.Sheets[sheet1Name] = XLSX.utils.json_to_sheet(req.body);
   XLSX.writeFile(workbook, excelFile);
   res.send(req.body);
 });
